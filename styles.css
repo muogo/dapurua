@@ -1,0 +1,672 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Exo:ital,wght@0,100..900;1,100..900&family=Major+Mono+Display&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Red Hat Display", system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* Reusable styles classes */
+.btn {
+    padding: 1rem 1.1rem;
+    background-color: hsl(230, 94%, 90%);
+
+    font-size: 1rem;
+    font-weight: 600;
+    color: hsl(230, 94%, 8%);
+    letter-spacing: 0.05rem;
+    cursor: pointer;
+    
+    border: none;
+    border-radius: 0.8rem;
+
+    transition: 0.25s ease-out;
+}
+.btn:hover {
+    background-color: hsl(230, 94%, 85%);
+}
+
+
+/* Header */
+/* Navbar */
+header > .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    width: 100%;
+    padding: 0.6rem 2rem 0.65rem 2rem;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 20;
+
+    transition: 0.25s ease-out;
+}
+.navbar.change {
+    background-color: hsla(230, 94%, 5%, 0.5);
+    backdrop-filter: blur(1rem);
+} 
+
+.navbar > #logo  {
+    text-decoration: none;
+    font-size: 2.4rem;
+    font-weight: 400;
+    color: hsl(230, 94%, 90%);
+    font-family: "Cinzel Decorative", system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
+    transition: 0.25s ease-out;
+}
+
+.navbar > ul {
+    display: flex;
+    align-items: center;
+    gap: 2.5rem;        
+
+    list-style-type: none;
+}
+
+ul > li > a {
+    text-decoration: none;
+    font-size: 1.05rem;
+    font-weight: 400;
+    color: hsl(230, 94%, 90%);
+    letter-spacing: 0.05rem;
+
+    transition: 0.25s ease-out;
+}
+li > a.active {
+    font-weight: 600;
+    color: hsl(230, 94%, 75%);
+}
+
+ul > #hamburgerClose, ul > .ul-btn, .navbar > #hamburgerOpen {
+    display: none;
+}
+
+ul > #hamburgerClose, .navbar > #hamburgerOpen {
+    background-color: transparent;
+    border: none;
+}
+
+.navbar > .nav-btn {    
+    padding: 0.9rem 1.05rem;
+}
+
+
+/* Hero Section */
+main > #home {
+    max-width: 100%;
+    background-image: url("./images/home.jpeg");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    padding: 12.7rem 3rem 14rem 3rem;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 11rem;
+
+    transition: 0.5s;
+}
+
+#home > #hero-text {
+    text-align: center;
+    margin-top: 3rem;
+
+    width: 56rem;
+    max-width: 100%;
+
+    color: hsl(230, 94%, 95%);
+}
+
+#hero-text > p {
+    font-size: (1rem, calc(7vw + 1rem), 2.5rem);
+    font-weight: 400;
+    letter-spacing: 0.05rem;
+
+    margin-bottom: 0.5rem;
+
+    transition: 0.5s;
+}
+
+#hero-text > h1 {
+    font-size: clamp(1.8rem, calc(7vw + 1rem), 4.2rem);
+    line-height: clamp(1.8rem, calc(8vw + 1rem), 4.8rem);
+    font-weight: 500;
+
+    transition: 0.5s;
+}
+
+#hero-text > h1 > span {
+    font-style: oblique;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+
+/* About Section */
+main > #about {
+    display: flex;
+    justify-content: center;
+
+    min-height: 33rem;
+    padding-top: 6rem;
+}
+
+#about > #about-left, #about-right {
+    background-size: cover;
+    background-position: center;
+    transition: 0.5s;
+}
+
+#about > #about-left {
+    flex: 0.3;
+    align-self: flex-start;
+
+    min-height: 20rem;
+    background-image: url("./images/about_img_1.jpg");
+    border-radius: 0 3.3rem 3.3rem 0;
+}
+
+#about > #about-center {
+    flex: 0.4;
+    align-self: center;
+
+    text-align: center;
+    color: hsl(230, 94%, 5%);
+
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+    padding: 0 4.15rem;
+}
+
+#about-center > img {
+    object-fit: cover;
+    object-position: center;
+
+    margin-bottom: 0.8rem;
+}
+
+#about-center > #about-center-text > h2 {
+    font-size: clamp(1.4rem, calc(7vw + 1rem), 3.5rem);
+    line-height: clamp(1.4rem, calc(8vw + 1rem), 4.2rem);
+    font-weight: 500;
+
+    margin-bottom: 1.2rem;
+}
+
+#about-center > #about-center-text > h2 > span {
+    font-style: oblique;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+#about-center > #about-center-text > p {    
+    font-size: (1rem, calc(7vw + 1rem), 2.5rem);
+    font-weight: 600;
+    letter-spacing: 0.03rem;
+    
+    margin-bottom: 2rem;
+}
+
+#about-center > #about-center-text > .about-btn {
+    padding: 1rem 1.6rem;
+    background-color: hsl(230, 94%, 10%);
+
+    color: hsl(230, 94%, 95%);
+    font-weight: 400;
+} 
+#about-center > #about-center-text > .about-btn:hover {
+    background-color: hsl(230, 94%, 5%);
+    scale: 1.05;
+} 
+
+#about > #about-right {
+    flex: 0.3;
+    align-self: flex-end;
+    
+    min-height: 20rem;
+    background-image: url("./images/about_img_2.jpg");
+    border-radius: 3.3rem 0 0 3.3rem;
+
+    margin-top: 12rem;
+}
+
+
+/* Residences */
+main > #residences {
+    padding: 6rem 3.5rem 0 3.5rem;
+}
+
+#residences > #residence-head {
+    text-align: center;
+    margin-bottom: 3.5rem;
+}
+
+#residence-head > h2 {
+    font-size: clamp(1.4rem, calc(7vw + 1rem), 3.5rem);
+    line-height: clamp(1.4rem, calc(8vw + 1rem), 4.2rem);
+    font-weight: 500;
+
+    margin-bottom: 1.2rem;
+}
+
+#residence-head > h2 > span {
+    font-style: oblique;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+#residence-head > p {
+    font-size: (1rem, calc(7vw + 1rem), 2.5rem);
+    font-weight: 600;
+    letter-spacing: 0.03rem;
+}
+
+#residences > #slider {
+    display: flex;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+    -ms-overflow-style: none; /* For IE and Edge */
+}
+#residences > #slider::-webkit-scrollbar {
+    display: none;
+}
+
+#residences > #slider > #residences-list {
+    columns: 4;
+    column-gap: 1.05rem;
+    break-inside: avoid;
+
+    list-style-type: none;
+}
+
+#residences-list > #list-item {
+    position: relative;
+    
+    flex: 0 0 auto; /* Prevent flex items from shrinking */
+    width: 100%;
+
+    margin-bottom: 1.1rem;
+}
+
+#residences-list > #list-item > img {
+    max-width: 100%;
+    height: auto;
+    object-fit: cover;
+
+    border-radius: 1.3rem;
+    border: 1px solid hsla(230, 94%, 10%, 0.15);
+}
+
+#residences-list > #list-item > p {
+    position: absolute;
+    bottom: 6px;
+    left: 0;
+    right: 0;
+    
+    font-size: (1.2rem, calc(8vw + 1.2rem), 3rem);
+    font-weight: 400;
+    letter-spacing: 0.05rem;
+    color: hsl(230, 94%, 95%);
+    text-align: center;
+    
+    background: linear-gradient(to top, hsl(230, 94%, 3.5%), transparent);
+    border-radius: 0 0 1.3rem 1.3rem;
+    padding: 1rem;
+}
+
+
+/* Footer */
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    padding: 6rem 5rem 5rem 5rem;
+
+    transition: 0.5s;
+}
+
+footer > #content {
+    position: relative;
+    
+    width: 100%;
+    height: 30rem;
+}
+
+#content > img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+    object-position: center;
+
+    border-radius: 2.8rem;
+}
+
+#content > #footer-text {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+
+    color: hsl(230, 94%, 95%);
+
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
+
+    max-width: 85%;
+    background: linear-gradient(to right, hsl(230, 94%, 3.5%), transparent);
+    padding: 0 14rem 0 5rem;
+    border-radius: 2.8rem 0 0 2.8rem;
+
+    transition: 0.5s;
+}
+
+#footer-text > h2 {
+    font-size: clamp(1.4rem, calc(7vw + 1rem), 3.5rem);
+    line-height: clamp(1.4rem, calc(8vw + 1rem), 4.2rem);
+    font-weight: 500;
+
+    margin-bottom: 1.2rem;
+}
+
+#footer-text > h2 > span {
+    font-style: oblique;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+#footer-text > p {
+    font-size: (1rem, calc(7vw + 1rem), 2.5rem);
+    font-weight: 400;
+    letter-spacing: 0.05rem;
+    
+    margin-bottom: 2rem;
+}
+
+#footer-text > .footer-btn {
+    background-color: hsl(230, 94%, 84%);
+} 
+
+#footer-text > .footer-btn:hover {
+    background-color: hsl(230, 94%, 90%);
+    scale: 1.05;
+} 
+
+
+/* Scroll-top-btn */
+.scroll-top-btn {
+    position: fixed;
+    bottom: 1.7rem;
+    right: 1.7rem;
+    /* z-index: 20; */
+    width: 50px;
+    height: 50px;
+    border: 1px solid hsla(230, 94%, 90%, 0.3);
+    border-radius: 50%;
+    background-color: hsla(230, 94%, 5%, 0.8);
+    backdrop-filter: blur(0.3rem);
+    color: hsl(230, 94%, 95%);
+    font-size: 1.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    visibility: hidden; /* Hidden initially */
+    opacity: 0;
+    transition: visibility 0.3s ease-in-out, opacity 0.3s ease-in-out;
+}
+
+.scroll-top-btn.show {
+    visibility: visible;
+    opacity: 1;
+}
+
+
+/* Responsiveness */
+@media (min-width: 1700px) {
+    #residences > #slider > #residences-list {
+        columns: 5;
+    }
+}
+
+@media (max-width: 1099px) {
+    #residences > #slider > #residences-list {
+        columns: 3;
+    }
+}
+
+@media (max-width: 914px) {
+    /* About */
+    main > #about {
+        flex-direction: column;
+        gap: 4rem;    
+    }
+    
+    #about > #about-left {
+        max-width: 100%;
+        flex: 1;
+        align-self: auto;
+
+        margin-right: 2rem;
+    }
+
+    #about > #about-center {
+        flex: 1;
+        padding-inline: 3rem;
+    }
+
+    #about > #about-right {
+        max-width: 100%;
+        flex: 1;
+        align-self: auto;
+
+        margin-left: 2rem;
+        margin-top: 0; 
+    }
+}
+
+@media (max-width: 899px) {
+    /* Residences */
+    main > #residences {
+        padding-inline: 2.5rem;
+    }
+    
+
+    /* Footer */
+    footer {
+        padding-inline: 3.5rem;
+    }
+
+    #content > #footer-text {
+        max-width: 100%;
+        padding-inline: 4rem;
+    }
+}
+
+@media (max-width: 859px) {
+    #residences > #slider > #residences-list {
+        columns: 2;
+    }
+}
+
+@media (max-width: 768px) {
+    /* Navbar */
+    .navbar > ul {
+        all: unset;
+        position: fixed;
+        top: 0;
+        right: -100%;
+        z-index: 10;
+        
+        list-style-type: none;
+    
+        display: flex;
+        flex-direction: column;
+        align-items:end;
+        justify-content: center;
+        gap: 3rem;
+    
+        min-height: 100dvh;
+        background-color: hsl(230, 94%, 5%, 0.98);
+        backdrop-filter: blur(1rem);
+        padding: 0 2rem 0 3.5rem;
+        border-left: 1px solid hsla(230, 94%, 90%, 0.3);
+
+        transition: 0.6s;
+    }
+
+    .navbar > ul.open {
+        right: 0;
+    }
+    
+    ul > li > a {
+        font-size: 1.35rem;
+    }
+
+    ul > #hamburgerClose, ul > .ul-btn, .navbar > #hamburgerOpen {
+        display: block;
+    }
+
+    ul > #hamburgerClose {
+        margin-bottom: 1rem;
+    }
+
+    ul > .ul-btn {
+        padding: 1.05rem 1.7rem;
+
+        font-size: 1.15rem;
+    }
+
+    .navbar > .nav-btn {    
+        display: none;
+    }
+}
+
+@media (max-width: 640px) {
+    /* Navbar */
+    header > .navbar {
+        padding-inline: 1.5rem;
+    }
+
+    
+    /* About */
+    #about > #about-left {
+        margin-right: 1.5rem;
+    }
+
+    #about > #about-center {
+        padding-inline: 2rem;
+        
+    }
+
+    #about > #about-right {
+        margin-left: 1.5rem;
+    }
+
+
+    /* Residences */
+    main > #residences {
+        padding-inline: 1.5rem;
+    }
+
+    
+    /* Footer */
+    footer {
+        padding-inline: 2.5rem;
+    }
+
+    #content > #footer-text {
+        padding-inline: 3rem;
+    }
+}
+
+@media (max-width: 549px) {
+    /* Residences */
+    #residences > #slider > #residences-list {
+        column-gap: 0.75rem;
+    }
+
+    #residences-list > #list-item {
+        margin-bottom: 0.7rem;
+    }
+}
+
+@media (max-width: 515px) {
+    /* Residences */
+    #residences > #slider > #residences-list {
+        columns: 1;
+    }
+}
+
+@media (max-width: 440px) {
+    /* Navbar */
+    header > .navbar {
+        padding-inline: 1.2rem;
+    }
+
+    
+    /* About */
+    #about > #about-left {
+        margin-right: 1rem;
+    }
+
+    #about > #about-center {
+        padding-inline: 1.4rem;
+        
+    }
+
+    #about > #about-right {
+        margin-left: 1rem;
+    }
+    
+
+    /* Residences */
+    main > #residences {
+        padding-inline: 1rem;
+    }
+    
+
+    /* Footer */
+    footer {
+        padding-inline: 1.6rem;
+    }
+
+    #content > #footer-text {
+        padding-inline: 2.1rem;
+    }
+}
+
+@media (max-width: 351px) {
+    /* Navbar */
+    header > .navbar {
+        padding-inline: 1rem;
+    }
+
+
+    /* Footer */
+    footer {
+        padding-inline: 1.4rem;
+    }
+
+    #content > #footer-text {
+        padding-inline: 1.8rem;
+    }
+}
+
+
+
+
+
