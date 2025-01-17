@@ -1,4 +1,4 @@
-# 🏡 Real Estate Agency Landing Page
+# 🏡 Haven: Real Estate Agency
 
 A clean and minimalistic static landing page for a real estate agency, developed using only **HTML** and **CSS**.  
 
