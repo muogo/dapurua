@@ -146,12 +146,28 @@ main > #home {
     line-height: clamp(1.8rem, calc(8vw + 1rem), 4.8rem);
     font-weight: 500;
 
+    margin-bottom: 1.7rem;
+
     transition: 0.3s ease-out;
 }
 
 #hero-text > h1 > span {
     font-style: oblique;
     font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+#hero-text > .hero-btn {
+    font-weight: 700;
+    font-size: 1.05rem;
+
+    padding: 1rem 1.6rem;
+    background-color: hsl(229, 100%, 85%);
+
+    transition: 0.3s ease-out;
+}
+#hero-text > .hero-btn:hover {
+    background-color: hsl(229, 100%, 90%);
+    scale: 1.05;
 }
 
 
