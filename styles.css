@@ -82,6 +82,9 @@ ul > li > a {
 
     transition: 0.25s ease-out;
 }
+li > a:hover {
+    color: hsl(230, 94%, 75%);
+}
 li > a.active {
     font-weight: 600;
     color: hsl(230, 94%, 75%);
@@ -115,7 +118,7 @@ main > #home {
     align-items: center;
     gap: 11rem;
 
-    transition: 0.5s;
+    transition: 0.3s ease-out;
 }
 
 #home > #hero-text {
@@ -135,7 +138,7 @@ main > #home {
 
     margin-bottom: 0.5rem;
 
-    transition: 0.5s;
+    transition: 0.3s ease-out;
 }
 
 #hero-text > h1 {
@@ -143,7 +146,7 @@ main > #home {
     line-height: clamp(1.8rem, calc(8vw + 1rem), 4.8rem);
     font-weight: 500;
 
-    transition: 0.5s;
+    transition: 0.3s ease-out;
 }
 
 #hero-text > h1 > span {
@@ -164,7 +167,7 @@ main > #about {
 #about > #about-left, #about-right {
     background-size: cover;
     background-position: center;
-    transition: 0.5s;
+    transition: 0.3s ease-out;
 }
 
 #about > #about-left {
@@ -292,11 +295,15 @@ main > #residences {
 
 #residences-list > #list-item {
     position: relative;
-    
-    flex: 0 0 auto; /* Prevent flex items from shrinking */
     width: 100%;
 
     margin-bottom: 1.1rem;
+    cursor: pointer;
+    
+    transition: 0.3s ease-out;
+}
+#list-item:hover {
+    transform: scale(0.95);
 }
 
 #residences-list > #list-item > img {
@@ -304,8 +311,10 @@ main > #residences {
     height: auto;
     object-fit: cover;
 
+    border: 1px solid hsla(230, 94%, 10%, 0.2);
     border-radius: 1.3rem;
-    border: 1px solid hsla(230, 94%, 10%, 0.15);
+
+    transition: 0.3s ease-out;
 }
 
 #residences-list > #list-item > p {
@@ -323,6 +332,8 @@ main > #residences {
     background: linear-gradient(to top, hsl(230, 94%, 3.5%), transparent);
     border-radius: 0 0 1.3rem 1.3rem;
     padding: 1rem;
+
+    transition: 0.3s ease-out;
 }
 
 
@@ -335,7 +346,7 @@ footer {
 
     padding: 6rem 5rem 5rem 5rem;
 
-    transition: 0.5s;
+    transition: 0.3s ease-out;
 }
 
 footer > #content {
@@ -372,7 +383,7 @@ footer > #content {
     padding: 0 14rem 0 5rem;
     border-radius: 2.8rem 0 0 2.8rem;
 
-    transition: 0.5s;
+    transition: 0.3s ease-out;
 }
 
 #footer-text > h2 {
