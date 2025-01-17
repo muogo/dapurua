@@ -14,11 +14,11 @@ html {
 /* Reusable styles classes */
 .btn {
     padding: 1rem 1.1rem;
-    background-color: hsl(230, 94%, 90%);
+    background-color: hsl(229, 100%, 90%);
 
     font-size: 1rem;
     font-weight: 600;
-    color: hsl(230, 94%, 8%);
+    color: hsl(229, 100%, 8%);
     letter-spacing: 0.05rem;
     cursor: pointer;
     
@@ -28,7 +28,7 @@ html {
     transition: 0.25s ease-out;
 }
 .btn:hover {
-    background-color: hsl(230, 94%, 85%);
+    background-color: hsl(229, 100%, 85%);
 }
 
 
@@ -51,7 +51,7 @@ header > .navbar {
     transition: 0.25s ease-out;
 }
 .navbar.change {
-    background-color: hsla(230, 94%, 5%, 0.5);
+    background-color: hsla(229, 100%, 5%, 0.5);
     backdrop-filter: blur(1rem);
 } 
 
@@ -59,7 +59,7 @@ header > .navbar {
     text-decoration: none;
     font-size: 2.4rem;
     font-weight: 400;
-    color: hsl(230, 94%, 90%);
+    color: hsl(229, 100%, 90%);
     font-family: "Cinzel Decorative", system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 
     transition: 0.25s ease-out;
@@ -77,17 +77,17 @@ ul > li > a {
     text-decoration: none;
     font-size: 1.05rem;
     font-weight: 400;
-    color: hsl(230, 94%, 90%);
+    color: hsl(229, 100%, 90%);
     letter-spacing: 0.05rem;
 
     transition: 0.25s ease-out;
 }
 li > a:hover {
-    color: hsl(230, 94%, 75%);
+    color: hsl(229, 100%, 75%);
 }
 li > a.active {
     font-weight: 600;
-    color: hsl(230, 94%, 75%);
+    color: hsl(229, 100%, 75%);
 }
 
 ul > #hamburgerClose, ul > .ul-btn, .navbar > #hamburgerOpen {
@@ -128,7 +128,7 @@ main > #home {
     width: 56rem;
     max-width: 100%;
 
-    color: hsl(230, 94%, 95%);
+    color: hsl(229, 100%, 95%);
 }
 
 #hero-text > p {
@@ -184,7 +184,7 @@ main > #about {
     align-self: center;
 
     text-align: center;
-    color: hsl(230, 94%, 5%);
+    color: hsl(229, 100%, 5%);
 
     display: flex;
     align-items: center;
@@ -223,13 +223,13 @@ main > #about {
 
 #about-center > #about-center-text > .about-btn {
     padding: 1rem 1.6rem;
-    background-color: hsl(230, 94%, 10%);
+    background-color: hsl(229, 100%, 10%);
 
-    color: hsl(230, 94%, 95%);
+    color: hsl(229, 100%, 95%);
     font-weight: 400;
 } 
 #about-center > #about-center-text > .about-btn:hover {
-    background-color: hsl(230, 94%, 5%);
+    background-color: hsl(229, 100%, 5%);
     scale: 1.05;
 } 
 
@@ -311,7 +311,7 @@ main > #residences {
     height: auto;
     object-fit: cover;
 
-    border: 1px solid hsla(230, 94%, 10%, 0.2);
+    border: 1px solid hsla(229, 100%, 10%, 0.2);
     border-radius: 1.3rem;
 
     transition: 0.3s ease-out;
@@ -326,10 +326,10 @@ main > #residences {
     font-size: (1.2rem, calc(8vw + 1.2rem), 3rem);
     font-weight: 400;
     letter-spacing: 0.05rem;
-    color: hsl(230, 94%, 95%);
+    color: hsl(229, 100%, 95%);
     text-align: center;
     
-    background: linear-gradient(to top, hsl(230, 94%, 3.5%), transparent);
+    background: linear-gradient(to top, hsl(229, 100%, 3.5%), transparent);
     border-radius: 0 0 1.3rem 1.3rem;
     padding: 1rem;
 
@@ -371,7 +371,7 @@ footer > #content {
     top: 0;
     bottom: 0;
 
-    color: hsl(230, 94%, 95%);
+    color: hsl(229, 100%, 95%);
 
     display: flex;
     align-items: flex-start;
@@ -379,7 +379,7 @@ footer > #content {
     flex-direction: column;
 
     max-width: 85%;
-    background: linear-gradient(to right, hsl(230, 94%, 3.5%), transparent);
+    background: linear-gradient(to right, hsl(229, 100%, 3.5%), transparent);
     padding: 0 14rem 0 5rem;
     border-radius: 2.8rem 0 0 2.8rem;
 
@@ -408,11 +408,11 @@ footer > #content {
 }
 
 #footer-text > .footer-btn {
-    background-color: hsl(230, 94%, 84%);
+    background-color: hsl(229, 100%, 84%);
 } 
 
 #footer-text > .footer-btn:hover {
-    background-color: hsl(230, 94%, 90%);
+    background-color: hsl(229, 100%, 90%);
     scale: 1.05;
 } 
 
@@ -425,11 +425,11 @@ footer > #content {
     /* z-index: 20; */
     width: 50px;
     height: 50px;
-    border: 1px solid hsla(230, 94%, 90%, 0.3);
+    border: 1px solid hsla(229, 100%, 90%, 0.3);
     border-radius: 50%;
-    background-color: hsla(230, 94%, 5%, 0.8);
+    background-color: hsla(229, 100%, 5%, 0.8);
     backdrop-filter: blur(0.3rem);
-    color: hsl(230, 94%, 95%);
+    color: hsl(229, 100%, 95%);
     font-size: 1.5rem;
     display: flex;
     justify-content: center;
@@ -531,10 +531,10 @@ footer > #content {
         gap: 3rem;
     
         min-height: 100dvh;
-        background-color: hsl(230, 94%, 5%, 0.98);
+        background-color: hsl(229, 100%, 5%, 0.98);
         backdrop-filter: blur(1rem);
         padding: 0 2rem 0 3.5rem;
-        border-left: 1px solid hsla(230, 94%, 90%, 0.3);
+        border-left: 1px solid hsla(229, 100%, 90%, 0.3);
 
         transition: 0.6s;
     }
