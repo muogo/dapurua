@@ -12,9 +12,10 @@
 
 <body>
     <div class="wrapper">
+        <!-- Header -->
         <header>
             <nav class="navbar">
-                <a id="logo" href="#home">
+                <a class="logo" href="#home">
                     Haven
                 </a>
                 <ul class="menu">
@@ -23,13 +24,13 @@
                     </button>
 
                     <li>
-                        <a href="#home" class="link">Home</a>
+                        <a href="#home">Home</a>
                     </li>
                     <li>
-                        <a href="#about" class="link">About</a>
+                        <a href="#about">About</a>
                     </li>
                     <li>
-                        <a href="#residences" class="link">Residences</a>
+                        <a href="#residences">Residences</a>
                     </li>
                     <button class="btn ul-btn">Get in touch</button>
                 </ul>
@@ -38,9 +39,10 @@
                 <button id="hamburgerOpen">
                     <img src="./svgs/hamburger.svg" width="56" alt="">
                 </button>
-
             </nav>
         </header>
+
+        <!-- Main -->
         <main>
             <!-- Hero -->
             <section id="home">
@@ -121,18 +123,84 @@
                     </ul>
                 </div>
             </section>
-        </main>
-        <footer>
-            <div id="content">
-                <img src="./images/footer.jpg" alt="">
-                <div id="footer-text">
-                    <h2>Our timeless <span>inclusions</span></h2>
-                    <p>We've been creating dream homes, our clients are thrilled to call their own. Delighting them
-                        with hand-picked finiches, accessories and accounts.</p>
-                    <button class="btn footer-btn">View Inclusions</button>
+
+            <!-- Inclusions -->
+            <section id="inclusions">
+                <div id="inclusions-content">
+                    <img src="./images/footer.jpg" alt="">
+                    <div id="inclusions-text">
+                        <h2>Our timeless <span>inclusions</span></h2>
+                        <p>We've been creating dream homes, our clients are thrilled to call their own. Delighting them
+                            with hand-picked finiches, accessories and accounts.</p>
+                        <button class="btn inclusions-btn">View Inclusions</button>
+                    </div>
                 </div>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer id="footer">
+            <div id="footer-content">
+                <div id="info">
+                    <a class="logo" href="#home">
+                        Haven
+                    </a>
+                    <p>
+                        A clean, minimalistic and responsive landing page for a real estate agency,
+                        developed using only HTML and CSS.
+                    </p>
+                </div>
+                
+                <ul id="links">
+                    <li>
+                        <a href="#home" class="link">Home</a>
+                    </li>
+                    <li>
+                        <a href="#about" class="link">About</a>
+                    </li>
+                    <li>
+                        <a href="#residences" class="link">Residences</a>
+                    </li>
+                </ul>
+                
+                <ul id="get-in-touch">
+                    <li id="address" class="git">
+                        <img src="./svgs/address.svg" alt="">
+                        <p>1 North Bostan AveMontgamery Village, MD 20886</p>
+                    </li>
+                    <li id="telephone" class="git">
+                        <img src="./svgs/telephone.svg" alt="">
+                        <p>+1 22233 4455</p>
+                    </li>
+                    <li id="mail" class="git">
+                        <img src="./svgs/mail.svg" alt="">
+                        <p>example@gmail.com</p>
+                    </li>
+                </ul>
+
+                <ul id="social-links">
+                    <li>
+                        <a href="https://facebook.com" class="social-link">
+                            <img src="./svgs/facebook.svg" alt="facebook logo">
+                            <span>Facebook</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://instagram.com" class="social-link">
+                            <img src="./svgs/instagram.svg" alt="instagram logo">
+                            <span>Instagram</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://x.com" class="social-link">
+                            <img src="./svgs/x.svg" alt="x logo">
+                            <span>X</span>
+                        </a>
+                    </li>
+                </ul>
             </div>
         </footer>
+
         <button id="scrollTopBtn" class="scroll-top-btn">↑</button>
     </div>
 
