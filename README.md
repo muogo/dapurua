@@ -1,6 +1,6 @@
 # 🏡 Haven: Real Estate Agency
 
-A clean and minimalistic static landing page for a real estate agency, developed using only **HTML** and **CSS**.  
+A clean, minimalistic and responsive landing page for a real estate agency(imaginary), developed using only **HTML** and **CSS**.  
 
 This project was created as a personal refresher to revisit the fundamentals of web development with plain HTML and CSS after working extensively with modern tools like ![React](https://img.shields.io/badge/-React-61DAFB?logo=react&logoColor=white&style=flat) and ![TailwindCSS](https://img.shields.io/badge/-TailwindCSS-38B2AC?logo=tailwind-css&logoColor=white&style=flat) and other related tools.  
 
