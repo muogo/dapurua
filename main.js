@@ -30,12 +30,12 @@ menuLinks.forEach(link => {
 // 2.1. To dynamically update the active link based on the section the user is currently viewing (e.g., #home, #about)
 const sections = document.querySelectorAll('section'); // Target sections with IDs like #home, #about
 
-// Function to remove active class from all links
+// To remove active class from all links
 const removeActiveClasses = () => {
     menuLinks.forEach(link => link.classList.remove("active"));
 };
 
-// Function to add active class to the link that matches the given id
+// To add active class to the link that matches the given id
 const setActiveLink = (id) => {
     removeActiveClasses();
     const activeLink = document.querySelector(`.menu a[href="#${id}"]`);
@@ -101,7 +101,7 @@ hamburgerClose.addEventListener('click', () => {
     menu.classList.remove("open");
 });
 
-// Close the menu when clicking outside of it
+// Closing the menu when clicking outside of it
 document.addEventListener('click', (event) => {
     const isClickInside = menu.contains(event.target) || hamburgerOpen.contains(event.target);
     if (!isClickInside) {
@@ -109,6 +109,23 @@ document.addEventListener('click', (event) => {
     }
 });
 
+
+// -----------------------------------------------------------------
+// 5.
+document.addEventListener('DOMContentLoaded', () => {
+    const scrollButtons = document.querySelectorAll('.ul-btn, .nav-btn, .about-btn');
+    const getInTouchSection = document.querySelector('#get-in-touch');
+
+    // Adding click event listener to each button
+    scrollButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            getInTouchSection.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start' // Scroll to the start of the section
+            });
+        });
+    });
+});
 
 
 
