@@ -139,7 +139,7 @@ header > .navbar {
 /* Hero Section */
 main > #home {
     max-width: 100%;
-    background-image: url("./images/home.jpg");
+    background-image: url("./images/homeee.png");
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -221,7 +221,7 @@ main > #about {
     align-self: flex-start;
 
     min-height: 20rem;
-    background-image: url("./images/about/about_img_1.jpg");
+    background-image: url("./images/about/bekrouncu.jpg");
     border-radius: 0 3.3rem 3.3rem 0;
 }
 
@@ -279,7 +279,7 @@ main > #about {
     align-self: flex-end;
     
     min-height: 20rem;
-    background-image: url("./images/about/about_img_2.jpg");
+    background-image: url("./images/about/nak.jpg");
     border-radius: 3.3rem 0 0 3.3rem;
 
     margin-top: 12rem;
@@ -329,31 +329,31 @@ main > #residences {
     list-style-type: none;
 }
 
-#residences-list > #list-item {
+#residences-list > .list-item {
     position: relative;
     width: 100%;
-
+    flex: 1 1 calc(33.33% - 1rem);
     margin-bottom: 1.1rem;
     cursor: pointer;
     
     transition: var(--transition-duration-two) var(--transition-ease-out);
 }
-#list-item:hover {
+.list-item:hover {
     transform: scale(0.95);
 }
 
-#residences-list > #list-item > img {
+#residences-list > .list-item > img {
     max-width: 100%;
     height: auto;
     object-fit: cover;
-
+    flex: 1 1 calc(33.33% - 1rem);
     border: 1px solid hsla(229, 100%, 10%, 0.2);
     border-radius: 1.3rem;
 
     transition: var(--transition-duration-two) var(--transition-ease-out);
 }
 
-#residences-list > #list-item > p {
+#residences-list > .list-item > p {
     position: absolute;
     bottom: 6px;
     left: 0;
@@ -800,7 +800,7 @@ footer > #footer-content {
         column-gap: 0.75rem;
     }
 
-    #residences-list > #list-item {
+    #residences-list > .list-item {
         margin-bottom: 0.7rem;
     }
 }
