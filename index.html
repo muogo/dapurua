@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jejak Langkah - Galeri Memori Sahabat Kampung</title>
+    <!-- Font Awesome untuk Icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts Premium -->
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-light: #ffffff; /* Background Putih Utama */
+            --bg-card: #fdfdfd; /* Background Card Putih Halus */
+            --bg-section: #f8fafc; /* Background Sekunder Abu-abu Sangat Terang */
+            --accent: #b8901c; /* Gold Elegan yang Lebih Kontras untuk Background Putih */
+            --accent-muted: rgba(184, 144, 28, 0.15);
+            --text-dark: #1e293b; /* Teks Utama Gelap (Sangat Terbaca) */
+            --text-gray: #64748b; /* Teks Sekunder Abu-abu */
+            --border-color: #e2e8f0; /* Garis Pembatas Tipis Elegan */
+            --transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: var(--bg-light);
+            color: var(--text-dark);
+            font-family: 'Montserrat', sans-serif;
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        /* --- HEADER / HERO --- */
+        header {
+            height: 55vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 20px;
+            position: relative;
+            /* Gradient overlay putih transparan agar gambar background menyatu lembut */
+            background: linear-gradient(rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.23)), url('asse/img/homeee.png') no-repeat center center/cover;
+        }
+
+        header::before {
+            content: '';
+            position: absolute;
+            bottom: 0; left: 0; width: 100%; height: 1px;
+            background-color: var(--border-color);
+            pointer-events: none;
+        }
+
+        header h1 {
+            font-family: 'Cinzel', serif;
+            font-size: 3.5rem;
+            color: var(--accent);
+            letter-spacing: 6px;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            font-weight: 700;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.05);
+        }
+
+        header p {
+            font-size: 1.1rem;
+            color: var(--text-gray);
+            max-width: 650px;
+            letter-spacing: 2px;
+            font-weight: 400;
+        }
+
+        .decorative-line {
+            width: 100px;
+            height: 2px;
+            background-color: var(--accent);
+            margin: 20px 0;
+        }
+
+        /* --- CONTAINER --- */
+        .wrapper {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 60px 40px 80px;
+        }
+
+        /* --- FILTER BUTTONS --- */
+        .filter-container {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 50px;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            background: transparent;
+            border: 1px solid var(--border-color);
+            color: var(--text-gray);
+            padding: 12px 28px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: var(--transition);
+            border-radius: 4px; /* Sedikit rounded agar modern */
+        }
+
+        .filter-btn.active, .filter-btn:hover {
+            color: #ffffff;
+            background-color: var(--accent);
+            border-color: var(--accent);
+            box-shadow: 0 8px 20px rgba(184, 144, 28, 0.25);
+        }
+
+        /* --- GALLERY GRID --- */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+            gap: 35px;
+        }
+
+        .photo-card {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 8px; /* Tampilan sudut melengkung modern */
+            position: relative;
+            overflow: hidden;
+            transition: var(--transition);
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.02);
+        }
+
+        .photo-card:hover {
+            transform: translateY(-8px);
+            border-color: var(--accent);
+            box-shadow: 0 20px 35px rgba(184, 144, 28, 0.1);
+        }
+
+        .image-box {
+            width: 100%;
+            aspect-ratio: 4/3;
+            overflow: hidden;
+            position: relative;
+            background-color: #eaeaea;
+        }
+
+        .image-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        /* Efek hover zoom halus */
+        .photo-card:hover .image-box img {
+            transform: scale(1.06);
+        }
+
+        .card-details {
+            padding: 25px;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .card-details .meta {
+            font-size: 0.75rem;
+            color: var(--accent);
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 8px;
+            display: flex;
+            justify-content: space-between;
+            font-weight: 600;
+        }
+
+        .card-details h3 {
+            font-family: 'Cinzel', serif;
+            font-size: 1.25rem;
+            margin-bottom: 10px;
+            color: var(--text-dark);
+            font-weight: 700;
+        }
+
+        .card-details p {
+            font-size: 0.9rem;
+            color: var(--text-gray);
+            font-weight: 400;
+            line-height: 1.6;
+        }
+
+        /* --- LIGHTBOX MODAL --- */
+        .lightbox {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background-color: rgba(255, 255, 255, 0.98); /* Lightbox bernuansa putih bersih */
+            z-index: 10000;
+            display: none;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        .lightbox.active {
+            display: flex;
+            opacity: 1;
+        }
+
+        .lightbox-wrapper {
+            position: relative;
+            max-width: 80%;
+            max-height: 85vh;
+            text-align: center;
+        }
+
+        .lightbox-wrapper img {
+            max-width: 100%;
+            max-height: 70vh;
+            border: 1px solid var(--border-color);
+            box-shadow: 0 15px 50px rgba(0, 0, 0, 0.08);
+            object-fit: contain;
+            border-radius: 4px;
+        }
+
+        .lightbox-close {
+            position: absolute;
+            top: -45px;
+            right: 0;
+            color: var(--text-dark);
+            font-size: 2.2rem;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .lightbox-close:hover {
+            color: var(--accent);
+        }
+
+        .lightbox-info {
+            margin-top: 25px;
+        }
+
+        .lightbox-info h4 {
+            font-family: 'Cinzel', serif;
+            color: var(--accent);
+            font-size: 1.5rem;
+            margin-bottom: 8px;
+            font-weight: 700;
+        }
+
+        .lightbox-info p {
+            color: var(--text-gray);
+            font-size: 1rem;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* --- RESPONSIVE MOBILE --- */
+        @media (max-width: 768px) {
+            header h1 { font-size: 2.2rem; letter-spacing: 3px; }
+            header p { font-size: 0.95rem; }
+            .wrapper { padding: 30px 20px 60px; }
+            .gallery-grid { grid-template-columns: 1fr; gap: 25px; }
+            .lightbox-wrapper { max-width: 90%; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- HERO INTRO -->
+    <header>
+        <h1>Jejak Langkah</h1>
+        <div class="decorative-line"></div>
+        <p>Sebuah Dokumen Visual & Ruang Nostalgia Para Sahabat Kampung Halaman</p>
+    </header>
+
+    <div class="wrapper">
+        <!-- FILTER ERA -->
+        <div class="filter-container">
+            <button class="filter-btn active" data-filter="all">Semua Kenangan</button>
+            <button class="filter-btn" data-filter="jadul">Masa Kecil (Jadul)</button>
+            <button class="filter-btn" data-filter="nongkrong">Momen Nongkrong</button>
+            <button class="filter-btn" data-filter="reuni">Reuni & Sekarang</button>
+        </div>
+
+        <!-- GALLERY GRID -->
+        <div class="gallery-grid">
+            
+            <!-- Foto 1 -->
+            <div class="photo-card" data-category="jadul" onclick="viewPhoto(this)">
+                <div class="image-box">
+                    <img src="asse/img/foto1.jpg" alt="Bermain Layangan">
+                </div>
+                <div class="card-details">
+                    <div class="meta"><span>Masa Kecil</span><span>Tahun 2010</span></div>
+                    <h3>Petualangan Sawah Barat</h3>
+                    <p>Momen sore hari saat kita semua rela kulit gosong demi mengejar layangan putus di area persawahan.</p>
+                </div>
+            </div>
+
+            <!-- Foto 2 -->
+            <div class="photo-card" data-category="nongkrong" onclick="viewPhoto(this)">
+                <div class="image-box">
+                    <img src="asse/img/foto16.jpg" alt="Nongkrong di Pos Ronda">
+                </div>
+                <div class="card-details">
+                    <div class="meta"><span>Momen Nongkrong</span><span>Tahun 2015</span></div>
+                    <h3>Malam di Pos Ronda</h3>
+                    <p>Modal kopi satu gelas plastik untuk bertiga dan gitar tua, kita bisa tertawa sampai menjelang subuh.</p>
+                </div>
+            </div>
+
+            <!-- Foto 3 -->
+            <div class="photo-card" data-category="reuni" onclick="viewPhoto(this)">
+                <div class="image-box">
+                    <img src="asse/img/foto17.jpg" alt="Reuni Lebaran">
+                </div>
+                <div class="card-details">
+                    <div class="meta"><span>Reuni & Sekarang</span><span>Tahun 2024</span></div>
+                    <h3>Kembali ke Kampung Halaman</h3>
+                    <p>Meskipun sebagian sudah merantau dan berkeluarga, lebaran selalu berhasil menyatukan kita kembali.</p>
+                </div>
+            </div>
+
+            <!-- Foto 4 -->
+            <div class="photo-card" data-category="jadul" onclick="viewPhoto(this)">
+                <div class="image-box">
+                    <img src="asse/img/foto19.jpg" alt="Mandi di Sungai">
+                </div>
+                <div class="card-details">
+                    <div class="meta"><span>Masa Kecil</span><span>Tahun 2008</span></div>
+                    <h3>Berenang di Kali Desa</h3>
+                    <p>Sensasi melompat dari pohon tua langsung ke dalam air sungai yang jernih. Masa-masa paling bebas tanpa beban.</p>
+                </div>
+            </div>
+
+            <!-- Foto 5 -->
+            <div class="photo-card" data-category="nongkrong" onclick="viewPhoto(this)">
+                <div class="image-box">
+                    <img src="asse/img/foto20.jpg" alt="Tim Sepakbola">
+                </div>
+                <div class="card-details">
+                    <div class="meta"><span>Momen Nongkrong</span><span>Tahun 2017</span></div>
+                    <h3>Juara Turnamen Agustusan</h3>
+                    <p>Kemenangan dramatis tim kampung kita lewat adu penalti. Perayaan juara paling heboh sepanjang sejarah.</p>
+                </div>
+            </div>
+
+            <!-- Foto 6 -->
+            <div class="photo-card" data-category="reuni" onclick="viewPhoto(this)">
+                <div class="image-box">
+                    <img src="asse/img/foto5.jpg" alt="Kongkow Warung Kopi">
+                </div>
+                <div class="card-details">
+                    <div class="meta"><span>Reuni & Sekarang</span><span>Tahun 2026</span></div>
+                    <h3>Cerita Lama di Angkringan</h3>
+                    <p>Rambut mulai menipis, obrolan mulai berubah soal pekerjaan, tapi candaan konyolnya tetap persis sama.</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- LIGHTBOX TEMPLATE -->
+    <div class="lightbox" id="photoViewer" onclick="closePhoto()">
+        <div class="lightbox-wrapper" onclick="event.stopPropagation()">
+            <span class="lightbox-close" onclick="closePhoto()">&times;</span>
+            <img src="" id="expandedImg" alt="Kenangan">
+            <div class="lightbox-info">
+                <h4 id="photoTitle">Judul Foto</h4>
+                <p id="photoDesc">Deskripsi momen kenangan.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- JAVASCRIPT SYSTEM -->
+    <script>
+        // Sistem Filter Foto Konten
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const cards = document.querySelectorAll('.photo-card');
+
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                filterBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+
+                const filterTarget = btn.getAttribute('data-filter');
+
+                cards.forEach(card => {
+                    if (filterTarget === 'all' || card.getAttribute('data-category') === filterTarget) {
+                        card.style.display = 'block';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        });
+
+        // Sistem Pop-up Gambar (Lightbox)
+        const viewer = document.getElementById('photoViewer');
+        const expandedImg = document.getElementById('expandedImg');
+        const photoTitle = document.getElementById('photoTitle');
+        const photoDesc = document.getElementById('photoDesc');
+
+        function viewPhoto(element) {
+            const imgSource = element.querySelector('.image-box img').src;
+            const titleText = element.querySelector('h3').textContent;
+            const descText = element.querySelector('p').textContent;
+
+            expandedImg.src = imgSource;
+            photoTitle.textContent = titleText;
+            photoDesc.textContent = descText;
+
+            viewer.style.display = 'flex';
+            setTimeout(() => {
+                viewer.classList.add('active');
+            }, 10);
+        }
+
+        function closePhoto() {
+            viewer.classList.remove('active');
+            setTimeout(() => {
+                viewer.style.display = 'none';
+            }, 400);
+        }
+    </script>
+</body>
+</html>
